@@ -1,0 +1,27 @@
+.image-transition-container {
+    width: 100%; /* Responsive width */
+    max-width: 500px; /* Maximum width */
+    height: auto;
+    max-height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .transition-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: fade 1s ease-in-out;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.8;
+    }
+    to {
+      opacity: 1;
+    }
+  }

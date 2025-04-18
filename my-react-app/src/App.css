@@ -1,0 +1,14 @@
+.app-container {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background: linear-gradient(to bottom, #87ceeb, #ffffff); /* Sky Blue to White Gradient */
+  min-height: 100vh;
+  color: #333;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #222;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
