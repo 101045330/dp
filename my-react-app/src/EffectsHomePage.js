@@ -15,9 +15,9 @@ const EffectsHomePage = () => {
       <div className="hover-images-section">
         <h2>Hover Image Gallery</h2>
         <div className="hover-images-grid">
-          <HoverImage src="/images/image1.jpg" alt="Image 1" />
-          <HoverImage src="/images/image2.jpg" alt="Image 2" />
-          <HoverImage src="/images/image3.jpg" alt="Image 3" />
+
+          <HoverImage src="/images/photo-3.png" alt="Image 3" />
+
         </div>
       </div>
 
