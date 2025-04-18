@@ -5,9 +5,9 @@ import './EffectsHomePage.css'; // Create this file
 
 const EffectsHomePage = () => {
   const transitionImages = [
-    '/images/image1.jpg', // Replace with your image paths
-    '/images/image2.jpg',
-    '/images/image3.jpg',
+    '/images/photo-1.png', // Replace with your image paths
+    '/images/photo-2.png',
+    '/images/photo-3.png',
   ];
 
   return (
