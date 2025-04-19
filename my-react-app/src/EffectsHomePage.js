@@ -13,6 +13,7 @@ const EffectsHomePage = () => {
     '/images/photo-2.png',
     '/images/photo-3.png',
   ];
+
   const profileData = {
     imageSrc: '/images/photo-2.png', // Replace with your image path
     name: 'MIn G.',

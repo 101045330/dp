@@ -7,7 +7,6 @@ body, html {
   background: linear-gradient(to right, #1a1a1a, rgba(0, 0, 0, 0.7) 20%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.7) 80%, #1a1a1a);
   font-family: 'Roboto', sans-serif; /* Material Design font */
   color: #fff;
-  overflow: hidden; /* Prevent scrolling */
 }
 
 .effects-home-container {
@@ -111,28 +110,3 @@ body, html {
 .particle:nth-child(3) { animation-duration: 6s; animation-delay: 2s; }
 .particle:nth-child(4) { animation-duration: 7s; animation-delay: 3s; }
 .particle:nth-child(5) { animation-duration: 8s; animation-delay: 4s; }
-
-/* Ensure the container takes the full height of the viewport */
-.effects-home-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Adjust section heights to fit within the viewport */
-.section {
-  flex: 1;
-  min-height: 30%;
-  max-height: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Ensure no horizontal scrolling */
-body, html, .effects-home-container {
-  overflow-x: hidden;
-}
