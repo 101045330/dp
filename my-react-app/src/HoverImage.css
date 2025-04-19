@@ -1,21 +1,33 @@
 .hover-container {
-    width: 100%; /* Responsive width */
-    max-width: 300px; /* Maximum width */
-    height: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hover-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .hover-image:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1) saturate(1.1);
-    cursor: pointer;
-  }
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.hover-image {
+  /* Removed transitions from here, framer-motion handles them */
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*
+
+.hover-container {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hover-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+*/

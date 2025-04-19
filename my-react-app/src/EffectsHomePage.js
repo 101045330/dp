@@ -16,7 +16,7 @@ const EffectsHomePage = () => {
         <h2>Hover Image Gallery</h2>
         <div className="hover-images-grid">
 
-          <HoverImage src="/images/photo-3.png" alt="Image 3" />
+          <HoverImage src="/images/photo-2.png" alt="Image 2" />
 
         </div>
       </div>
