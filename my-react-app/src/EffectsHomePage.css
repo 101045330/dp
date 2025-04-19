@@ -1,50 +1,138 @@
-.effects-home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-  }
-  
-  .hover-images-section {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .hover-images-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-  }
-  
-  .transition-image-section {
-    text-align: center;
-  }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  }
+/* EffectsHomePage.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #1a1a1a, rgba(0, 0, 0, 0.7) 20%, rgba(255, 255, 255, 0.05) 50%, rgba(0, 0, 0, 0.7) 80%, #1a1a1a);
+  font-family: 'Roboto', sans-serif; /* Material Design font */
+  color: #fff;
+  overflow: hidden; /* Prevent scrolling */
+}
 
-
-  /* EffectsHomePage.css */
 .effects-home-container {
-  transition: filter 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 16px; /* Material Design spacing */
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .effects-home-container.blur {
-  filter: blur(10px);
+  filter: blur(2px); /* Reduced blur for better spinner visibility */
 }
 
-.hover-images-section,
-.transition-image-section {
-  margin: 20px;
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border: 8px solid rgba(255, 255, 255, 0.5);
+  border-top: 8px solid #fff; /* White flare */
+  border-radius: 50%;
+  animation: spin 1s linear infinite, glow 1.5s ease-in-out infinite;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3); }
+}
+
+.section {
+  width: 100%;
+  max-width: 600px; /* Responsive width */
+  margin: 16px 0; /* Material Design spacing */
+  padding: 24px; /* Material Design padding */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px; /* Material Design rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Material Design elevation */
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Material Design elevation on hover */
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 16px; /* Material Design spacing */
+  font-size: 2rem; /* Material Design typography */
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .hover-images-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px; /* Material Design spacing */
+  justify-content: center;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-200px) translateX(100px); opacity: 0; }
+}
+
+.particle:nth-child(1) { animation-duration: 4s; animation-delay: 0s; }
+.particle:nth-child(2) { animation-duration: 5s; animation-delay: 1s; }
+.particle:nth-child(3) { animation-duration: 6s; animation-delay: 2s; }
+.particle:nth-child(4) { animation-duration: 7s; animation-delay: 3s; }
+.particle:nth-child(5) { animation-duration: 8s; animation-delay: 4s; }
+
+/* Ensure the container takes the full height of the viewport */
+.effects-home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Adjust section heights to fit within the viewport */
+.section {
+  flex: 1;
+  min-height: 30%;
+  max-height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Ensure no horizontal scrolling */
+body, html, .effects-home-container {
+  overflow-x: hidden;
 }
