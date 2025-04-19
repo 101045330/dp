@@ -1,3 +1,4 @@
+/* HoverImage.css */
 .hover-container {
   width: 100%;
   max-width: 300px;
@@ -7,27 +8,7 @@
 }
 
 .hover-image {
-  /* Removed transitions from here, framer-motion handles them */
   display: block;
   width: 100%;
   height: auto;
 }
-
-/*
-
-.hover-container {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hover-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-}
-*/

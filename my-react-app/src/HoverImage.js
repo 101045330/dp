@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import motion
+import { motion } from 'framer-motion';
 import './HoverImage.css';
 
 const HoverImage = ({ src, alt }) => {
@@ -9,12 +9,14 @@ const HoverImage = ({ src, alt }) => {
       rotateX: 0,
       rotateY: 0,
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+      filter: 'grayscale(0%)', // Initial grayscale value
     },
     hover: {
       scale: 1.05,
-      rotateX: -10, // Rotate on X-axis
-      rotateY: 10,  // Rotate on Y-axis
+      rotateX: -10,
+      rotateY: 10,
       boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.3)',
+      filter: 'grayscale(100%)', // Grayscale on hover
       transition: {
         duration: 0.3,
         ease: 'easeInOut',

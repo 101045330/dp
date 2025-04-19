@@ -27,3 +27,24 @@
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
+
+
+  /* EffectsHomePage.css */
+.effects-home-container {
+  transition: filter 0.3s ease-in-out;
+}
+
+.effects-home-container.blur {
+  filter: blur(10px);
+}
+
+.hover-images-section,
+.transition-image-section {
+  margin: 20px;
+}
+
+.hover-images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
