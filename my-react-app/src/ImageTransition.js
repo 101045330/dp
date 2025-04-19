@@ -1,3 +1,4 @@
+// ImageTransition.js
 import React, { useState, useEffect } from 'react';
 import './ImageTransition.css';
 
@@ -7,16 +8,16 @@ const ImageTransition = ({ images, interval = 3000 }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, interval); // Change image every 'interval' milliseconds
+    }, interval);
 
-    return () => clearInterval(timer); // Cleanup the interval
+    return () => clearInterval(timer);
   }, [images, interval]);
 
   return (
     <div className="image-transition-container">
       <img
         src={images[currentIndex]}
-        alt={`Image ${currentIndex + 1}`}
+        alt={`${currentIndex + 1}`}
         className="transition-image"
       />
     </div>

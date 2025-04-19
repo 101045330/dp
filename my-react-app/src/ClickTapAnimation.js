@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './ClickTapAnimation.css';
 
-const ClickTapAnimation = ({ imageSrc, name, title, bio, portfolioLink, socialLinks, contactInfo }) => {
+const ClickTapAnimation = React.memo(({ imageSrc, name, title, bio, portfolioLink, socialLinks, contactInfo }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleClick = () => {
@@ -61,6 +61,6 @@ const ClickTapAnimation = ({ imageSrc, name, title, bio, portfolioLink, socialLi
       )}
     </div>
   );
-};
+});
 
 export default ClickTapAnimation;

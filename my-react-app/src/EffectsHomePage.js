@@ -1,12 +1,16 @@
+//EffectsHomePage.js
 import React, { useEffect, useState } from 'react';
 import HoverImage from './HoverImage';
 import ImageTransition from './ImageTransition';
 import ClickTapAnimation from './ClickTapAnimation';
-import { Container, Paper, Typography } from '@mui/material';
+import PaperConfetti from './PaperConfetti'; // Import the 3D effect component
+import { Container, Paper, Typography } from '@mui/material'; // Correct import for Material-UI components
 import './EffectsHomePage.css';
 
 const EffectsHomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [renderHoverImage, setRenderHoverImage] = useState(false); // New state
 
   const transitionImages = [
     '/images/photo-1.png', // Replace with your image paths
@@ -30,7 +34,12 @@ const EffectsHomePage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // 3 seconds delay
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false); // Confetti disappears
+        setRenderHoverImage(true); // Allow rendering of HoverImage
+      }, 2000); // Duration of confetti
+    }, 2000); // Delay before loading ends
 
     return () => clearTimeout(timer);
   }, []);
@@ -42,6 +51,7 @@ const EffectsHomePage = () => {
       disableGutters
     >
       {isLoading && <div className="loading-spinner"></div>}
+      {showConfetti && <PaperConfetti />}
       <div className="particles">
         <div className="particle"></div>
         <div className="particle"></div>
@@ -55,7 +65,7 @@ const EffectsHomePage = () => {
           Hover Image Gallery
         </Typography>
         <div className="hover-images-grid">
-          <HoverImage src="/images/photo-2.png" alt="Image 2" />
+          {renderHoverImage && <HoverImage src="/images/photo-2.png" alt="Image 2" />}
         </div>
       </Paper>
 
